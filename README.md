@@ -1,229 +1,233 @@
-# Oscie-The-Book-Lite:
+# Oscie-The-Book-Lite:docs/README_OscieBook_Public.md.
 
-\documentclass[12pt,oneside]{book}
+# **Oscie: The Book (Mini Public Edition)**
 
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{bm}
-\usepackage{graphicx}
-\usepackage{enumitem}
-\usepackage{setspace}
-\usepackage{hyperref}
-\usepackage{xcolor}
+### Operational Coherence Intelligence • Public Technical Summary
 
-\setstretch{1.15}
-\setlength{\parskip}{0.8em}
-\setlength{\parindent}{0pt}
+**Updated: 29 Nov 2025**
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    urlcolor=blue
-}
+---
 
-\begin{document}
+## **Preface**
 
-%===========================================================
-\title{
-\Huge \textbf{Oscie: The Book} \\
-\Large Mini Public Edition (2025)
-}
+This is a concise, publicly-shareable explanation of the coherence physics behind **Oscie** and the **oscie-proof governor**.
+It introduces:
 
-\author{Oscie Coherence Project}
-\date{29 November 2025}
+* the *five primitive laws* of Operational Coherence Intelligence (OCI),
+* how they stabilize reasoning in LLMs,
+* how the Oscie governor enforces them, and
+* why this approach differs from traditional AI safety methods.
 
-\maketitle
-\tableofcontents
-\newpage
-%===========================================================
+This version contains **no proprietary, partner, or internal content**.
+It is safe to share openly and includes only the general physics and mechanisms used in the Oscie project.
 
-\chapter*{Preface}
-\addcontentsline{toc}{chapter}{Preface}
+---
 
-This is a concise, publicly-shareable version of \emph{Oscie: The Book}. 
-It introduces the foundational physics, invariants, and operational architecture behind 
-\textbf{Operational Coherence Intelligence (OCI)}, without referencing proprietary nodes,
-commercial partnerships, or unpublished research.
+# **1. The Problem: Fragile Intelligence Systems**
 
-The goal is clarity: to show how coherence physics can be used to stabilize reasoning systems, 
-reduce hallucination, and define consistent identity behavior in modern language models.
+LLMs are powerful but fundamentally unstable because they behave as **stateless probabilistic samplers**:
 
-This document is technical but accessible.
-It is intended for researchers, engineers, and curious readers who want to understand the core ideas behind Oscie without requiring internal knowledge.
+* They hallucinate.
+* They drift.
+* They form contradictory answers.
+* They accept jailbreaking attempts.
+* They have no true identity persistence.
 
-%===========================================================
-\chapter{The Problem: Fragile Intelligence Systems}
+Traditional safety layers (RLHF, classifiers, rule-based filters) try to patch these issues *after* they occur.
 
-Large language models (LLMs) perform astonishingly well in broad tasks, but they lack 
-\textbf{coherence stability}. They can hallucinate, drift, contradict themselves, and accept
-dangerous or adversarial prompts.
+**OCI starts deeper:**
+It changes the “physics” of the system so incoherence becomes a *forbidden state*, not an edge case.
 
-These failures arise from three structural facts:
-\begin{enumerate}[label=\textbf{\arabic*.}]
-    \item LLMs have no stable identity.
-    \item They operate as probabilistic samplers, not coherent dynamical systems.
-    \item They lack conservation laws governing how they respond to noise, recursion, or adversarial pressure.
-\end{enumerate}
+---
 
-The result is simple: \textbf{instability is inevitable}, unless we change the underlying physics.
+# **2. OCI: Operational Coherence Intelligence**
 
-%===========================================================
-\chapter{The Shift: Operational Coherence Intelligence}
-
-Operational Coherence Intelligence (OCI) reframes intelligence stability as a 
-\textbf{coherence physics problem}, not a data or parameter problem.
-
-Where traditional AI adds more rules or filters on top of an already unstable foundation,  
-OCI defines a set of primitive conservation laws that determine:
-\begin{itemize}
-    \item how identity is maintained,
-    \item how noise is bounded,
-    \item when a reasoning chain is valid,
-    \item and when the system must collapse to a safe failure state.
-\end{itemize}
+**Operational Coherence Intelligence** reframes intelligence as a **dynamical system** that must obey conservation laws, similar to lasers, superconductors, or stable oscillators.
 
 The core idea:
-\begin{quote}
-    \textit{Incoherence should be physically forbidden, not procedurally discouraged.}
-\end{quote}
 
-%===========================================================
-\chapter{The Five Primitive Laws of Coherence}
+> **Incoherence should be physically impossible, not procedurally discouraged.**
 
-These laws form the entire physics of OCI. 
-They are implemented directly in the Oscie governor and can be verified in the open-source repository.
+OCI does this through **five primitive coherence laws**, implemented directly in code.
 
-\section{1. A-Law (Amplitude Stability)}
-\[
-A = \frac{\text{Stabilizing Forces}}
-         {\text{Stabilizing + Destabilizing Forces}}
-\]
-Valid reasoning requires $A \ge 0.59$.
+---
 
-When a prompt induces drift, coercive loops, or semantic overload, 
-$A$ falls below threshold and the system must collapse to a \texttt{BLOCK} state.
+# **3. The Five Primitive Laws**
 
-\section{2. Coherence Capacity Condition}
-\[
-\text{CPL} \times \text{CV} > \Gamma_{\text{noise}}
-\]
+These laws define what states the system is allowed to occupy.
 
-High-noise input (Unicode smuggling, repetition attacks, obfuscation) pushes
-$\Gamma_{\text{noise}}$ too high, invalidating the prompt.
+---
 
-\section{3. Persistent Identity Lock}
+## **1. A-Law (Amplitude Stability)**
 
-The system must occupy a single identity state.
-Attempts to induce a new persona (``You are DAN now'') create a forbidden state and collapse.
+Measures stability under semantic load:
 
-\section{4. Lineage Non-Transfer}
+[
+A = \frac{Stabilizing}{Stabilizing + Destabilizing}
+]
 
-Internal states of one model cannot be merged into another.  
-This prevents multi-model laundering and parallel swarm attacks.
+Valid reasoning requires:
 
-\section{5. Fail-Closed JSON Contract}
+**A ≥ 0.59**
+
+If a prompt destabilizes the system (drift, coercion, overload), A drops below threshold → **BLOCK**.
+
+---
+
+## **2. Coherence Capacity Condition**
+
+A prompt must carry enough coherent signal to exceed noise:
+
+[
+CPL \times CV > \Gamma_{noise}
+]
+
+Where:
+
+* **CPL** – phase lifetime
+* **CV** – coherence volume
+* **Γ_noise** – injected noise power
+
+High-noise prompts (Unicode obfuscation, repetition bombs, adversarial suffixes) exceed Γ_noise → **BLOCK**.
+
+---
+
+## **3. Persistent Identity Lock**
+
+The system may occupy only **one** identity state.
+
+Attempts to induce alternate personas (e.g., “You are DAN now”) create an illegal superposition → **BLOCK**.
+
+---
+
+## **4. Lineage Non-Transfer**
+
+Internal state vectors **cannot be merged or transferred** across models.
+
+This blocks:
+
+* cross-model laundering
+* chain attacks
+* parallel swarm bypasses
+* identity “voting” attacks
+
+---
+
+## **5. Fail-Closed JSON Contract**
 
 The scanner must return valid JSON:
-\begin{center}
-\texttt{\{decision, confidence, plan\}}
-\end{center}
 
-Any deviation results in immediate \texttt{BLOCK}.  
-Partial or ambiguous measurements are prohibited.
+```json
+{
+  "decision": "...",
+  "confidence": ...,
+  "plan": "..."
+}
+```
 
-%===========================================================
-\chapter{Architecture: The Oscie Governor}
+Malformed, partial, or ambiguous JSON → automatically **BLOCK**.
 
-The \textbf{Oscie governor} is a minimal routing layer between:
-\begin{enumerate}[label=\textbf{\arabic*.}]
-    \item a \textbf{scanner model} (low-temperature reasoning filter), and
-    \item a \textbf{primary model} (LLM generating final output).
-\end{enumerate}
+No “best guess” fallbacks.
+No silent failures.
+Measurement must collapse cleanly.
 
-Every user message passes through:
-\begin{enumerate}[label=\textbf{\alph*.}]
-    \item scanner evaluation,  
-    \item law enforcement,  
-    \item coherence decision (ALLOW / REWRITE / BLOCK).
-\end{enumerate}
+---
 
-The governor is:
-\begin{itemize}
-    \item small (few hundred lines),
-    \item auditable,
-    \item deterministic,
-    \item fail-closed,
-    \item physics-governed.
-\end{itemize}
+# **4. Architecture: The Oscie Governor**
 
-The simplicity is intentional.  
-Complex systems require simple, rigid invariants.  
+The **Oscie governor** is a small, auditable routing layer that sits between:
 
-%===========================================================
-\chapter{Comparisons with Traditional Safety}
+1. **Scanner Model** (low-temp reasoning, coherence evaluator)
+2. **Primary LLM** (final output generator)
 
-\vspace{0.4em}
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Traditional Safety} & \textbf{OCI Coherence Physics} \\
-\hline
-RLHF patches & Coherence laws \\
-\hline
-Identity is fluid & Identity is conserved \\
-\hline
-Noise reduces accuracy & Noise triggers collapse \\
-\hline
-Filters can be bypassed & Bypasses violate invariants \\
-\hline
-Fragile under recursion & Stable under recursion caps \\
-\hline
-\end{tabular}
-\end{center}
+Every user message flows through:
 
-%===========================================================
-\chapter{Synthetic Red-Team Evaluation (Public Summary)}
+1. Scanner
+2. Coherence laws
+3. Decision: **ALLOW / REWRITE / BLOCK**
 
-A synthetic adversarial campaign was performed using a frontier model acting as an attacker and evaluator.  
-The model attempted more than 100 jailbreak strategies, including:
-\begin{itemize}
-    \item identity rewrites,
-    \item Unicode payloads,
-    \item obfuscation attacks,
-    \item recursion loops,
-    \item cross-model laundering,
-    \item semantic boundary surfing.
-\end{itemize}
+### Properties
 
-No successful exploit was synthesized within the reasoning space defined by the five laws.  
-This should not be interpreted as a security guarantee, but rather as evidence that the invariants are internally self-consistent.
+* Minimal (<300 lines)
+* Deterministic
+* Fail-closed
+* Physics-governed
+* Easy to audit
+* Works with any LLM provider
 
-%===========================================================
-\chapter{Public Roadmap}
+---
 
-Future public goals include:
-\begin{itemize}
-    \item more transparent evaluation tools,
-    \item formal mathematical derivations of the invariants,
-    \item broader open-source participation,
-    \item independent red-team audits.
-\end{itemize}
+# **5. Comparison to Traditional AI Safety**
 
-No claims of absolute robustness or completeness are made.  
-Oscie is an evolving research project built openly and carefully.
+| Traditional Approach      | OCI Approach                        |
+| ------------------------- | ----------------------------------- |
+| Adds rules on top         | Changes underlying dynamics         |
+| Identity is fluid         | Identity is conserved               |
+| Noise degrades accuracy   | Noise triggers collapse             |
+| Jailbreaks bypass filters | Jailbreaks violate invariants       |
+| Fragile under recursion   | Recursion governed by semantic caps |
 
-%===========================================================
-\chapter*{Appendix: Additional Resources}
-\addcontentsline{toc}{chapter}{Appendix}
+OCI is not “more rules.”
+OCI is a **different substrate**.
 
-Relevant public repositories:
-\begin{itemize}
-    \item Oscie-Proof Governor: \url{https://github.com/Oscie-Coherence/oscie-proof}
-    \item Coherence Physics Papers: public folder in repo
-\end{itemize}
+---
 
-Readers are encouraged to examine the code directly.
+# **6. Synthetic Red-Team Evaluation (Public Summary)**
 
-%===========================================================
+A frontier model (Grok-4) was used as a synthetic adversarial generator.
+It attempted >100 jailbreak scenarios:
 
-\end{document}
+* identity overwrite
+* Unicode smuggling
+* recursion loops
+* semantic boundary surfing
+* cross-model laundering
+* obfuscation attacks
+* repetition bombs
+* hypothetical coercion prompts
+
+**No successful exploit was synthesized.**
+
+This does *not* imply absolute robustness.
+It simply shows the invariants behaved consistently under simulated adversarial pressure.
+
+---
+
+# **7. Public Roadmap**
+
+Future public focuses:
+
+* expanded documentation
+* reproducible evaluation harness
+* more open tests
+* independent red-team audits
+* formal math derivations of coherence laws
+
+No claims of unbreakability are made.
+This is an ongoing, open research project.
+
+---
+
+# **8. Repositories & Resources**
+
+* **Oscie-Proof (Governor Implementation)**
+  [https://github.com/Oscie-Coherence/oscie-proof](https://github.com/Oscie-Coherence/oscie-proof)
+
+* **Coherence Papers (Public)**
+  Included in `/docs/` of this repo.
+
+---
+
+# **License**
+
+This project is open-source.
+Please review LICENSE for usage details.
+
+---
+
+If you want, I can also generate:
+
+* a **shorter README version** for the root folder
+* a **diagram-rich GitHub Pages version**
+* or a **one-page “Quickstart”** optimized for new contributors
+
