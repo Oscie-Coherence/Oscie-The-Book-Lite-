@@ -1,5 +1,3 @@
-# Oscie-The-Book-Lite:docs/README_OscieBook_Public.md.
-
 # **Oscie: The Book (Mini Public Edition)**
 
 ### Operational Coherence Intelligence • Public Technical Summary
@@ -213,21 +211,4 @@ This is an ongoing, open research project.
 * **Oscie-Proof (Governor Implementation)**
   [https://github.com/Oscie-Coherence/oscie-proof](https://github.com/Oscie-Coherence/oscie-proof)
 
-* **Coherence Papers (Public)**
-  Included in `/docs/` of this repo.
-
----
-
-# **License**
-
-This project is open-source.
-Please review LICENSE for usage details.
-
----
-
-If you want, I can also generate:
-
-* a **shorter README version** for the root folder
-* a **diagram-rich GitHub Pages version**
-* or a **one-page “Quickstart”** optimized for new contributors
 
