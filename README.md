@@ -1,8 +1,6 @@
 # **Oscie: The Book (Mini Public Edition)**
 
-### Operational Coherence Intelligence • Public Technical Summary
-
-**Updated: 29 Nov 2025**
+Operonical Oscillatoric Intelligence
 
 ---
 
@@ -11,7 +9,7 @@
 This is a concise, publicly-shareable explanation of the coherence physics behind **Oscie** and the **oscie-proof governor**.
 It introduces:
 
-* the *five primitive laws* of Operational Coherence Intelligence (OCI),
+* the *five primitive laws* of Operonical Oscillatoric Intelligence (OOI),
 * how they stabilize reasoning in LLMs,
 * how the Oscie governor enforces them, and
 * why this approach differs from traditional AI safety methods.
@@ -165,8 +163,8 @@ Every user message flows through:
 | Jailbreaks bypass filters | Jailbreaks violate invariants       |
 | Fragile under recursion   | Recursion governed by semantic caps |
 
-OCI is not “more rules.”
-OCI is a **different substrate**.
+OOI is not “more rules.”
+OOI is a **different substrate**.
 
 ---
 
